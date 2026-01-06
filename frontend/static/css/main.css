@@ -1,0 +1,105 @@
+@import url('fonts.css');
+
+:root {
+    --blue: #3A80C2;
+    --text: #0F172A;
+    --gray: #64748B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'TT Chocolates', sans-serif;
+    color: var(--text);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    padding: 20px 0;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/* BUTTONS */
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+}
+
+.btn-light {
+    border: 1px solid #CBD5E1;
+    color: var(--text);
+}
+
+.btn-outline {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+
+/* HERO */
+.hero {
+    padding: 100px 0;
+}
+
+.hero__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero__text {
+    margin: 24px 0 32px;
+    color: black;
+    max-width: 480px;
+    font-size: 32px;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
