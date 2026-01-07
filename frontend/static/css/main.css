@@ -73,7 +73,12 @@ body {
    HEADER
 ===================== */
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
     padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header__inner {
@@ -121,7 +126,7 @@ body {
 /* ЗАГОЛОВОК */
 .hero__title {
     font-size: 64px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.1;
     max-width: 650px;
 }
@@ -194,34 +199,58 @@ body {
     line-height: 1.3;
 }
 
+/* Анимация плавающих иконок */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float-rotated {
+    0%, 100% {
+        transform: translateY(0) rotate(10deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
 .hero-icon {
     position: absolute;
-    width: 28px;
+    width: 33px;
     opacity: 0.8;
+    animation: float 4s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .icon-globe {
     top: 40px;
     left: 300px;
+    animation-delay: 0s;
 }
+
 .icon-phone {
     top: 200px;
     /*left: 55%;*/
     /*transform: rotate(-1deg);*/
     left: 950px;
+    animation-delay: 1s;
 }
 
 .icon-card {
     bottom: 650px;
     right: 300px;
-    /*transform: rotate(10deg);*/
+    animation: float-rotated 4s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
+
 .icon-db {
     top: 600px;
     right: 400px;
-}
-.hero-icon {
-    pointer-events: none;
+    animation-delay: 1.5s;
 }
 
 /* SERVICES */
@@ -230,7 +259,7 @@ body {
 }
 
 .services__title {
-    font-size: 36px;
+    font-size: 64px;
     font-weight: 600;
     margin-bottom: 48px;
 }
@@ -250,18 +279,27 @@ body {
 .service-card {
     background: #F8FAFC;
     border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    padding: 43px;
+    border: 1px solid rgba(121, 121, 121, 0.36);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 
     display: flex;
     flex-direction: column;
     gap: 16px;
+    
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
 /* Иконка */
 .service-card__icon {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 12px;
     background: #E0E7FF;
 
@@ -271,18 +309,18 @@ body {
 }
 
 .service-card__icon img {
-    width: 24px;
+    width: 28px;
 }
 
 /* Заголовок */
 .service-card__title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 /* Текст */
 .service-card__text {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--gray);
 }
@@ -298,7 +336,215 @@ body {
 .service-card__tags span {
     background: #111;
     color: #fff;
-    font-size: 12px;
-    padding: 6px 12px;
+    font-size: 14px;
+    padding: 8px 14px;
     border-radius: 999px;
+}
+
+/* =====================
+   ABOUT SECTION
+===================== */
+.about {
+    margin: 120px 0;
+    padding: 60px 0;
+}
+
+.about__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+}
+
+/* Левая часть */
+.about__left {
+    flex: 0 0 50%;
+    max-width: 650px;
+    padding-right: 20px;
+}
+
+.about__logo {
+    margin-bottom: 60px;
+}
+
+.about__logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Карточки */
+.about__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 775px;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.about-card__title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #9B7EDE;
+    line-height: 1.2;
+    margin: 0;
+    margin-left: 72px; /* Выравнивание с текстом (48px иконка + 24px gap) */
+}
+
+.about-card__text-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+    align-items: flex-start;
+}
+
+.about-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: transparent;
+    margin-top: 4px;
+}
+
+.about-card__icon img {
+    width: 48px;
+    height: auto;
+}
+
+.about-card__text {
+    flex: 1;
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+}
+
+/* Пунктирная линия */
+.about__divider {
+    height: 1px;
+    background: transparent;
+    border-top: 2px dashed #3A80C2;
+    margin: 0;
+    margin-left: 72px; /* Отступ от иконки (48px + 24px gap) */
+}
+
+/* Правая часть */
+.about__right {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 85px;
+    padding-top: 237px; /* Выравнивание с текстовыми блоками */
+}
+
+.about__laptop {
+    position: relative;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.about__laptop:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.about__laptop-img {
+    width: 100%;
+    max-width: 900px;
+    min-width: 636px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* =====================
+   CTA SECTION
+===================== */
+.cta {
+    margin: 120px auto;
+    padding: 20px 40px;
+    background: linear-gradient(90deg, #3780C8 55%, #0D59A4 100%);
+    border-radius: 30px;
+    max-width: 1400px;
+    width: calc(100% - 580px);
+}
+
+.cta__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.cta__left {
+    flex: 1;
+}
+
+.cta__image {
+    width: 100%;
+    max-width: 341px;
+    height: auto;
+    display: block;
+}
+
+.cta__right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    text-align: center;
+}
+
+.cta__text {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #fff;
+    margin: 0;
+}
+
+.btn-cta {
+    background: #fff;
+    color: #0D59A4;
+    font-weight: 600;
+    padding: 20px 28px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-cta:hover::before {
+    left: 100%;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: #f8f9fa;
+}
+
+.btn-cta:active {
+    transform: translateY(-1px);
 }
