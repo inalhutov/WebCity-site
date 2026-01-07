@@ -1,27 +1,137 @@
 {% extends "base.html" %}
 
+
+
+
 {% block content %}
 
 <section class="hero">
-    <div class="container hero__inner hero__center">
+    <img src="/static/img/icon1.png" class="hero-icon icon-globe">
+    <img src="/static/img/icon2.png" class="hero-icon icon-phone">
+    <img src="/static/img/icon3.png" class="hero-icon icon-card">
+    <img src="/static/img/icon4.png" class="hero-icon icon-db">
+    <div class="container hero__inner">
 
-        <h1>
-            Создай своё цифровое<br>
-            <span>БУДУЩЕЕ</span>
-        </h1>
+        <!-- Левая часть -->
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Создай своё цифровое<br>
+                <span>БУДУЩЕЕ</span>
+            </h1>
 
-        <p class="hero__text">
-            Мы создаём веб-сайты и эффективные IT-решения,
-            которые помогут вашему бизнесу процветать
-            в цифровом мире.
-        </p>
+            <p class="hero__text">
+                Мы создаём веб-сайты и эффективные IT-решения,
+                которые помогут вашему бизнесу процветать
+                в цифровом мире.
+            </p>
 
-        <div class="hero__buttons">
-            <a href="#" class="btn btn-primary">Стать клиентом</a>
-            <a href="#" class="btn btn-light">Наши работы</a>
+            <div class="hero__buttons">
+                <a href="#" class="btn btn-primary">Стать клиентом</a>
+                <a href="#" class="btn btn-outline">Наши работы</a>
+            </div>
+        </div>
+
+        <!-- Правая часть -->
+        <div class="hero__visual">
+            <img src="/static/img/big_logo.png" alt="WebCity">
         </div>
 
     </div>
-</section>
 
+    <!-- Статистика -->
+    <div class="container hero__stats">
+        <div class="stat">
+            <strong>50+</strong>
+            <span>Завершённых проектов</span>
+        </div>
+        <div class="stat">
+            <strong>100%</strong>
+            <span>Довольных клиентов</span>
+        </div>
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Поддержка клиентов</span>
+        </div>
+        <div class="stat">
+            <strong>3+</strong>
+            <span>Года опыта</span>
+        </div>
+    </div>
+</section>
+<section class="services">
+    <div class="container">
+
+        <h2 class="services__title">
+            НАШИ НАПРАВЛЕНИЯ <span>УСЛУГ</span>
+        </h2>
+
+        <div class="services__grid">
+
+            <!-- Карточка -->
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/static/img/icons/web.svg" alt="">
+                </div>
+
+                <h3 class="service-card__title">WEB Разработка</h3>
+
+                <p class="service-card__text">
+                    Создание сайтов любой сложности.
+                    Начиная от визиток заканчивая
+                    полноценными веб-приложениями
+                </p>
+
+                <div class="service-card__tags">
+                    <span>CMS</span>
+                    <span>SEO</span>
+                    <span>Адаптив</span>
+                    <span>Веб-фреймворки</span>
+                </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/static/img/icons/bot.svg" alt="">
+                </div>
+
+                <h3 class="service-card__title">Telegram-боты</h3>
+
+                <p class="service-card__text">
+                    В WEBCity мы создаём Telegram-ботов
+                    для самых разных задач
+                </p>
+
+                <div class="service-card__tags">
+                    <span>Aiogram</span>
+                    <span>Python</span>
+                    <span>Боты</span>
+                    <span>Базы данных</span>
+                </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="service-card">
+                <div class="service-card__icon">
+                    <img src="/static/img/icons/custom.svg" alt="">
+                </div>
+
+                <h3 class="service-card__title">Индивидуальные решения</h3>
+
+                <p class="service-card__text">
+                    Разработка нестандартных решений
+                    под задачи вашего бизнеса
+                </p>
+
+                <div class="service-card__tags">
+                    <span>Python</span>
+                    <span>API</span>
+                    <span>Автоматизация</span>
+                    <span>Базы данных</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 {% endblock %}
